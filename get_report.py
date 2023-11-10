@@ -15,8 +15,8 @@ st.set_page_config(layout="wide")
 FILE_BUFFER = io.BytesIO()
 #CLAIM_SECRETS = st.secrets["CLAIM_SECRETS"]
 API_URL = st.secrets["API_URL"]
-SECRETS_MAP = {"Gretel": 0}
-CLIENTS_MAP = {0: "Gretel"}
+SECRETS_MAP = {"Ofertec": 0}
+CLIENTS_MAP = {0: "Ofertec"}
 
 statuses = {
     'delivered': {'type': '4. delivered', 'state': 'in progress'},
@@ -186,10 +186,10 @@ def get_report(CLAIM_SECRETS, period, start_, end_) -> pandas.DataFrame:
     return result_frame
 
 
-st.markdown(f"# Informe de rutas para Gretel")
+st.markdown(f"# Informe de rutas para Ofertec")
 
 CLAIM_SECRETS=[]
-CLAIM_SECRETS.append(st.text_input("Por favor ingrese el token API",value=""))
+CLAIM_SECRETS.append(st.text_input("Por favor ingrese el token API", value=""))
 
 if st.sidebar.button("Actualizar datos", type="primary"):
     st.cache_data.clear()
